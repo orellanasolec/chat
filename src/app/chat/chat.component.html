@@ -1,0 +1,14 @@
+<router-outlet></router-outlet>
+<div #mensajesDiv class="text-slate-700 overflow-y-scroll bg-[#f1f7e3] w-[80%] h-[500px] mx-auto flex flex-col items-center relative border-t-2 border-l-2 border-r-2 border-[#59785b73] mt-10">
+    <div *ngFor="let mensaje of mensajesRecibidos; let i = index" class="w-full flex flex-col-reverse"  >
+      <p class="text-center pb-4 px-4 break-words" [ngClass]="{'bg-[#d5eed5]': i % 2 === 0, 'bg-[#f1f7e3]': i % 2 !== 0}">{{mensaje }}</p>
+    </div>
+  </div>
+  
+  
+  
+  <div class="w-[80%] h-20 mx-auto flex items-center justify-center bg-[#f1f7e3] border-2 border-[#59785b73] text-slate-700 ">
+    <input type="text" [(ngModel)]="message" placeholder="Escribe algo aquí" class="text-center h-10 mb-3 border-2 border-[#59785b73] mr-3 w-72 focus:!border-slate-500 focus:outline-none" />
+    <button (click)="mandarSaludo(message)" class="text-center bg-[#59785B] h-10 w-40 rounded-md text-white mb-3">Enviar mensaje</button>
+  </div>
+  
